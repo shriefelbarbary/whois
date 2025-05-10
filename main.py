@@ -34,8 +34,5 @@ def whois_lookup():
     except Exception as e:
         return jsonify({"error": f"Unable to perform WHOIS lookup: {str(e)}"}), 500
 
-import os
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(debug=True)
